@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Narrative Capture</title>
+  <link rel="icon" type="image/png" href="https://disinfoconsulting.eu/wp-content/uploads/2025/09/NC-Kreis.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="antialiased bg-slate-900">
+<div class="bg-slate-900">
+  <header class="absolute inset-x-0 top-0 z-50">
+    <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+      <div class="flex lg:flex-1">
+        <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">Your Company</span>
+          <img src="https://disinfoconsulting.eu/wp-content/uploads/2025/09/NC-Fontlogo-1-scaled.png" alt="Company Logo" class="h-14 w-auto">
+        </a>
+      </div>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200">
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="#feature" class="text-sm/6 font-semibold text-white hover:text-[#FF8C5A] transition-colors">Product</a>
+        <a href="#workflow" class="text-sm/6 font-semibold text-white hover:text-[#FF8C5A] transition-colors">Features</a>
+        <a href="#aboutus" class="text-sm/6 font-semibold text-white hover:text-[#FF8C5A] transition-colors">Company</a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="http://narrative-capture.com/Code/index.html" class="text-sm/6 font-semibold text-white hover:text-[#FF8C5A] transition-colors">Access Demo <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </nav>
+    <el-dialog>
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" class="fixed inset-0 focus:outline-none">
+          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-slate-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+            <div class="flex items-center justify-between">
+              <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">Your Company</span>
+                <h1 class="text-2xl font-bold text-white">Safeguard</h1>
+              </a>
+              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-200">
+                <span class="sr-only">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-white/10">
+                <div class="space-y-2 py-6">
+                  <a href="#workflow" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5 transition-colors">Product</a>
+                  <a href="#feature" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5 transition-colors">Features</a>
+                  <a href="#aboutus" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5 transition-colors">Company</a>
+                </div>
+                <div class="py-6">
+                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white/5 transition-colors">Log in</a>
+                </div>
+              </div>
+            </div>
+          </el-dialog-panel>
+        </div>
+      </dialog>
+    </el-dialog>
+  </header>
+
+  <div class="relative isolate px-6 pt-14 lg:px-8">
+    <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+      <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#FF8C5A] to-[#FFA07A] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"></div>
+    </div>
+    <div class="mx-auto max-w-4xl py-32 sm:py-20 lg:py-30 mb-20">
+      <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+        <div class="relative rounded-full px-3 py-1 text-sm/6 text-slate-400 ring-1 ring-orange-500/20 hover:ring-white/20 transition-all">
+          Announcing our next round of funding soon</a>
+        </div>
+      </div>
+      <div class="text-center">
+        <h1 class="text-3xl font-semibold tracking-tight text-balance text-white xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl" data-aos="fade-up">Narrative attacks destroy companies.</h1>
+<p class="mt-8 text-base font-medium text-pretty text-slate-400 sm:text-lg md:text-xl lg:text-xl/8" data-aos="fade-up">Every year, businesses lose 78 billion dollars to disinformation. Don't be one of them.</p>        <div class="mt-10 flex items-center justify-center gap-x-6" data-aos="fade-up">
+          <a href="#contact" class="rounded-md bg-[#FF8C5A] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-[#FF9D6E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8C5A] transition-colors">Request Demo</a>
+          <a href="#feature" class="text-sm/6 font-semibold text-white hover:text-[#FF8C5A] transition-colors">Learn more <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+    <div aria-hidden="true" class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+      <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#FF8C5A] to-[#FFA07A] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"></div>
+    </div>
+  </div>
+
+  <div id="feature" class="bg-slate-900 pt-25 pb-40">
+    <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+      <h2 class="text-center text-base/7 font-semibold text-[#FF8C5A]" data-aos="fade-up">Safeguard Revenue</h2>
+      <p class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl" data-aos="fade-up">Your unified defense against narrative threats</p>
+      <div class="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+        <div class="relative lg:row-span-2" data-aos="fade-up">
+          <div class="absolute inset-px rounded-lg bg-slate-800 lg:rounded-l-4xl"></div>
+          <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
+            <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+              <p class="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Perfect UX Design</p>
+              <p class="mt-2 max-w-lg text-sm/6 text-slate-400 max-lg:text-center mb-8">You don't need to be a programmer or engineer - our intuitive platform shows you exactly what matters for your organization.</p>
+            </div>
+            <div class="@container relative min-h-120 w-full grow max-lg:mx-auto max-lg:max-w-sm">
+              <div class="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-slate-700 bg-slate-900 outline outline-white/20">
+                <img src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png" alt="" class="size-full object-cover object-top" />
+              </div>
+            </div>
+          </div>
+          <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15 lg:rounded-l-4xl"></div>
+        </div>
+        <div class="relative max-lg:row-start-1" data-aos="fade-up">
+          <div class="absolute inset-px rounded-lg bg-slate-800 max-lg:rounded-t-4xl"></div>
+          <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
+            <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+              <p class="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Safeguard Your Organization </p>
+              <p class="mt-2 max-w-lg text-sm/6 text-slate-400 max-lg:text-center">Everything you need to protect your reputation and revenue</p>
+            </div>
+            <div class="flex flex-1 items-center justify-center px-8 max-lg:pt-10 max-lg:pb-12 sm:px-10 lg:pb-2">
+              <img src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-performance.png" alt="" class="w-full max-lg:max-w-xs" />
+            </div>
+          </div>
+          <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15 max-lg:rounded-t-4xl"></div>
+        </div>
+        <div class="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2" data-aos="fade-up">
+          <div class="absolute inset-px rounded-lg bg-slate-800"></div>
+          <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+            <div class="px-8 pt-8 sm:px-10 sm:pt-10">
+              <p class="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center ">Compliance</p>
+              <p class="mt-2 max-w-lg text-sm/6 text-slate-400 max-lg:text-center">All of our processes are GDPR compliant and designed for any enterprise in the EU. Deploy with confidence - no regulatory headaches with us.</p>
+            </div>
+            <div class="@container flex flex-1 items-center max-lg:py-6 lg:pb-2">
+              <img src="https://tailwindcss.com/plus-assets/img/component-images/dark-bento-03-security.png" alt="" class="h-[min(152px,40cqw)] object-cover" />
+            </div>
+          </div>
+          <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15"></div>
+        </div>
+        <div class="relative lg:row-span-2" data-aos="fade-up">
+          <div class="absolute inset-px rounded-lg bg-slate-800 max-lg:rounded-b-4xl lg:rounded-r-4xl"></div>
+          <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
+            <div class="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+              <p class="mt-2 text-lg font-medium tracking-tight text-white max-lg:text-center">Powerful APIs</p>
+              <p class="mt-2 max-w-lg text-sm/6 text-slate-400 max-lg:text-center mb-8">Seamlessly integrate narrative intelligence into your existing business systems.</p>
+            </div>
+            <div class="relative min-h-120 w-full grow">
+              <div class="absolute top-10 right-0 bottom-0 left-10 overflow-hidden rounded-tl-xl bg-slate-900/60 outline outline-white/10">
+                <div class="flex bg-slate-900 outline outline-white/5">
+                  <div class="-mb-px flex text-sm/6 font-medium text-slate-400">
+                    <div class="border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white">NotificationSetting.jsx</div>
+                    <div class="border-r border-gray-600/10 px-4 py-2">App.jsx</div>
+                  </div>
+                </div>
+                <div class="px-6 pt-6 pb-14">
+                  <!-- Your code example -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/15 max-lg:rounded-b-4xl lg:rounded-r-4xl"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <div id="workflow" class="overflow-hidden bg-slate-900 py-24 sm:py-22">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+      <div class="lg:pt-4 lg:pr-8">
+        <div class="lg:max-w-lg">
+          <h2 class="text-base/7 font-semibold text-[#FF8C5A]" data-aos="fade-up">Safeguard Revenue</h2>
+          <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl" data-aos="fade-up">A better workflow</p>
+          <p class="mt-6 text-base/7 text-slate-300 sm:text-lg/8 lg:text-lg/8" data-aos="fade-up">
+            Protect your financial performance from narrative attacks before they cause volatility or stakeholder loss. 
+             Our platform detects risks early – keeping your bottom line safe.
+          </p>
+
+          <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-slate-400 lg:max-w-none">
+            
+            <!-- Daily Insights -->
+            <div class="relative pl-9" data-aos="fade-up">
+              <dt class="inline font-semibold text-white">
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="absolute top-1 left-1 size-5 text-[#FF8C5A]">
+                  <path d="M5.5 17a4.5 4.5 0 0 1-1.44-8.765 4.5 4.5 0 0 1 8.302-3.046 3.5 3.5 0 0 1 4.504 4.272A4 4 0 0 1 15 17H5.5Zm3.75-2.75a.75.75 0 0 0 1.5 0V9.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0l-3.25 3.5a.75.75 0 1 0 1.1 1.02l1.95-2.1v4.59Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                Daily Insights
+              </dt>
+              <dd class="inline">
+                Stay ahead of emerging threats. Get concise daily briefings on narratives shaping your sector. 
+                Our AI turns millions of signals into clear, actionable intelligence.
+              </dd>
+            </div>
+
+            <!-- See What Others Miss -->
+            <div class="relative pl-9" data-aos="fade-up" data-aos-delay="250">
+              <dt class="inline font-semibold text-white">
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="absolute top-1 left-1 size-5 text-[#FF8C5A]">
+                  <path d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                See What Others Miss
+              </dt>
+              <dd class="inline">
+                Narrative-first intelligence reveals hidden patterns. Go beyond keywords – we map entire 
+                information ecosystems to uncover coordinated campaigns and hidden influence operations.
+              </dd>
+            </div>
+
+            <!-- Complex Neural Networks -->
+            <div class="relative pl-9" data-aos="fade-up" data-aos-delay="300">
+              <dt class="inline font-semibold text-white">
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="absolute top-1 left-1 size-5 text-[#FF8C5A]">
+                  <path d="M4.632 3.533A2 2 0 0 1 6.577 2h6.846a2 2 0 0 1 1.945 1.533l1.976 8.234A3.489 3.489 0 0 0 16 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234Z" />
+                  <path d="M4 13a2 2 0 1 0 0 4h12a2 2 0 1 0 0-4H4Zm11.24 2a.75.75 0 0 1 .75-.75H16a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75h-.01a.75.75 0 0 1-.75-.75V15Zm-2.25-.75a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 0 0 .75-.75V15a.75.75 0 0 0-.75-.75h-.01Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+                Complex Neural Networks, Simple Outputs
+              </dt>
+              <dd class="inline">
+                Our machine learning does the heavy lifting. You receive sharp, easy-to-use insights – 
+                no technical expertise required.
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+            <!-- Vidoe -->
+            <div class="flex w-full overflow-hidden rounded-xl shadow-xl ring-1 ring-orange-500/20 md:-ml-4 lg:-ml-0 justify-center items-center bg-slate-800/50" data-aos="fade-left">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover" >
+        <source src="https://disinfoconsulting.eu/wp-content/uploads/2025/09/138962-770800093_medium.mp4" type="video/mp4">
+      </video>
+
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="aboutus" class="bg-slate-900 py-24 sm:py-32">
+  <div class="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
+    <div class="max-w-xl">
+      <h2 class="text-3xl font-semibold tracking-tight text-pretty text-white sm:text-4xl">Meet our leadership</h2>
+      <p class="mt-6 text-lg/8 text-slate-400">We're a specialized team combining disinformation expertise, business strategy, legal compliance, and technical innovation to deliver Europe's most advanced narrative intelligence platform.</p>
+    </div>
+    <ul role="list" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+      <li>
+        <div class="flex items-center gap-x-6">
+          <img src="https://disinfoconsulting.eu/wp-content/uploads/2025/09/Portrait-von-mir_QUADRAT1-e1758712557547.png" alt="" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
+          <div>
+            <h3 class="text-base/7 font-semibold tracking-tight text-white">Markus Schwinghammer</h3>
+            <p class="text-sm/6 font-semibold text-[#FF8C5A]">Co-Founder / CEO</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="flex items-center gap-x-6">
+          <img src="https://disinfoconsulting.eu/wp-content/uploads/2025/09/20250603-IMG_9304-scaled1-e1758712507457.jpg" alt="" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
+          <div>
+            <h3 class="text-base/7 font-semibold tracking-tight text-white">Vivian Lösch</h3>
+            <p class="text-sm/6 font-semibold text-[#FF8C5A]">Co-Founder / CMO</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="flex items-center gap-x-6">
+          <img src="https://disinfoconsulting.eu/wp-content/uploads/2025/03/Livio.jpg" alt="" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
+          <div>
+            <h3 class="text-base/7 font-semibold tracking-tight text-white">Livio Zalozieckyj</h3>
+            <p class="text-sm/6 font-semibold text-[#FF8C5A]">Co-Founder / CFO</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="flex items-center gap-x-6">
+          <img src="https://disinfoconsulting.eu/wp-content/uploads/2025/09/1596642784222-1.jpeg" alt="" class="size-16 rounded-full outline-1 -outline-offset-1 outline-white/10" />
+          <div>
+            <h3 class="text-base/7 font-semibold tracking-tight text-white">Maximilian Rieger</h3>
+            <p class="text-sm/6 font-semibold text-[#FF8C5A]">Co-Founder / CTO</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+  <div id="contact" class="isolate bg-slate-900 px-6 py-24 sm:py-32 lg:px-8"> 
+    <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+      <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-1/2 -z-10 aspect-1155/678 w-144.5 max-w-none -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#FF8C5A] to-[#FFA07A] opacity-20 sm:left-[calc(50%-40rem)] sm:w-288.75"></div>
+    </div>
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl" data-aos="fade-up">Contact sales</h2>
+      <p class="mt-2 text-lg/8 text-slate-400" data-aos="fade-up">Let's discuss how Narrative Capture can safeguard your organization's future.</p>
+    </div>
+    <form id="contact-form" action="#" method="POST" class="mx-auto mt-16 max-w-6xl sm:mt-20">
+      <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+        <div data-aos="fade-up">
+          <label for="first-name" class="block text-sm/6 font-semibold text-white">First name</label>
+          <div class="mt-2.5">
+            <input id="first-name" type="text" name="first-name" autocomplete="given-name" class="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#FF8C5A] transition-colors" />
+          </div>
+        </div>
+        <div data-aos="fade-up">
+          <label for="last-name" class="block text-sm/6 font-semibold text-white">Last name</label>
+          <div class="mt-2.5">
+            <input id="last-name" type="text" name="last-name" autocomplete="family-name" class="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#FF8C5A] transition-colors" />
+          </div>
+        </div>
+        <div class="sm:col-span-2" data-aos="fade-up" data-aos-delay="250">
+          <label for="company" class="block text-sm/6 font-semibold text-white">Company</label>
+          <div class="mt-2.5">
+            <input id="company" type="text" name="company" autocomplete="organization" class="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#FF8C5A] transition-colors" />
+          </div>
+        </div>
+        <div class="sm:col-span-2" data-aos="fade-up" data-aos-delay="300">
+          <label for="email" class="block text-sm/6 font-semibold text-white">Email</label>
+          <div class="mt-2.5">
+            <input id="email" type="email" name="email" autocomplete="email" class="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#FF8C5A] transition-colors" />
+          </div>
+        </div>
+        <div class="sm:col-span-2" data-aos="fade-up" data-aos-delay="350">
+          <label for="phone-number" class="block text-sm/6 font-semibold text-white">Phone number</label>
+          <div class="mt-2.5">
+            <div class="flex rounded-md bg-white/5 outline-1 -outline-offset-1 outline-white/10 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-[#FF8C5A] transition-all">
+              <div class="grid shrink-0 grid-cols-1 focus-within:relative">
+                <select id="country" name="country" autocomplete="country" aria-label="Country" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-transparent py-2 pr-7 pl-3.5 text-base text-slate-400 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#FF8C5A] sm:text-sm/6">
+                  <option>EU</option>
+                  <option>CA</option>
+                  <option>US</option>
+                </select>
+                <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-slate-400 sm:size-4">
+                  <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+              </div>
+              <input id="phone-number" type="text" name="phone-number" placeholder="+12 245 678910" class="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6" />
+            </div>
+          </div>
+        </div>
+        <div class="sm:col-span-2" data-aos="fade-up" data-aos-delay="400">
+          <label for="message" class="block text-sm/6 font-semibold text-white">Message</label>
+          <div class="mt-2.5">
+            <textarea id="message" name="message" rows="4" class="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-[#FF8C5A] transition-colors"></textarea>
+          </div>
+        </div>
+        <div class="flex gap-x-4 sm:col-span-2" data-aos="fade-up" data-aos-delay="450">
+          <div class="flex h-6 items-center">
+            <div class="group relative inline-flex w-8 shrink-0 rounded-full bg-white/5 p-px inset-ring inset-ring-orange-500/20 outline-offset-2 outline-[#FF8C5A] transition-colors duration-200 ease-in-out has-checked:bg-[#FF8C5A] has-focus-visible:outline-2">
+              <span class="size-4 rounded-full bg-white shadow-xs ring-1 ring-slate-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5"></span>
+              <input id="agree-to-policies" type="checkbox" name="agree-to-policies" aria-label="Agree to policies" class="absolute inset-0 appearance-none focus:outline-hidden" />
+            </div>
+          </div>
+          <label for="agree-to-policies" class="text-sm/6 text-slate-400">
+            By selecting this, you agree to our
+            <a href="#" class="font-semibold whitespace-nowrap text-[#FF8C5A] hover:text-[#FF9D6E] transition-colors">privacy policy</a>.
+          </label>
+        </div>
+      </div>
+      <div class="mt-10" data-aos="fade-up" data-aos-delay="500">
+        <button type="submit" class="block w-full rounded-md bg-[#FF8C5A] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-[#FF9D6E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF8C5A] transition-colors">Let's talk</button>
+      </div>
+    </form>
+  </div>
+
+  <footer class="bg-slate-900 border-t border-slate-800">
+    <div class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+      <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+        <div class="space-y-8">
+          <p class="text-sm leading-6 text-slate-400">Making the world a better place through constructing modern solutions.</p>
+          <div class="flex space-x-6">
+            <a href="#" class="text-slate-400 hover:text-[#FF8C5A] transition-colors">
+              <span class="sr-only">Facebook</span>
+              <i data-feather="facebook"></i>
+            </a>
+            <a href="#" class="text-slate-400 hover:text-[#FF8C5A] transition-colors">
+              <span class="sr-only">Instagram</span>
+              <i data-feather="instagram"></i>
+            </a>
+            <a href="#" class="text-slate-400 hover:text-[#FF8C5A] transition-colors">
+              <span class="sr-only">Twitter</span>
+              <i data-feather="twitter"></i>
+            </a>
+            <a href="#" class="text-slate-400 hover:text-[#FF8C5A] transition-colors">
+              <span class="sr-only">GitHub</span>
+              <i data-feather="github"></i>
+            </a>
+            <a href="#" class="text-slate-400 hover:text-[#FF8C5A] transition-colors">
+              <span class="sr-only">LinkedIn</span>
+              <i data-feather="linkedin"></i>
+            </a>
+          </div>
+        </div>
+        <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 class="text-sm font-semibold leading-6 text-white">Solutions</h3>
+              <ul class="mt-6 space-y-4">
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">Marketing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">Analytics</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">Commerce</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">Insights</a>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-10 md:mt-0">
+              <h3 class="text-sm font-semibold leading-6 text-white">Support</h3>
+              <ul class="mt-6 space-y-4">
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">Documentation</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">Guides</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">API Status</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 class="text-sm font-semibold leading-6 text-white">Company</h3>
+              <ul class="mt-6 space-y-4">
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">About</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">Blog</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">Jobs</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">Press</a>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-10 md:mt-0">
+              <h3 class="text-sm font-semibold leading-6 text-white">Legal</h3>
+              <ul class="mt-6 space-y-4">
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">Claim</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">Privacy</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">Terms</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-6 text-slate-400 hover:text-white transition-colors">Cookie Policy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-16 border-t border-slate-800 pt-8">
+        <p class="text-sm leading-6 text-slate-400">&copy; 2025 Disinfo Combat GmbH. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+    feather.replace();
+    
+    // ==================== EMAIL ====================
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // ==================== TOGGLE SWITCH FIX ====================
+    const toggleSwitch = document.getElementById('agree-to-policies');
+    const toggleContainer = toggleSwitch.closest('.group');
+    const toggleButton = toggleContainer.querySelector('span');
+    
+    function updateToggleUI(checked) {
+        if (checked) {
+            // Activated state
+            toggleContainer.classList.add('bg-[#FF8C5A]');
+            toggleContainer.classList.remove('bg-white/5');
+            toggleButton.classList.add('translate-x-3.5');
+            toggleButton.classList.remove('translate-x-0');
+        } else {
+            // Deactivated state
+            toggleContainer.classList.remove('bg-[#FF8C5A]');
+            toggleContainer.classList.add('bg-white/5');
+            toggleButton.classList.remove('translate-x-3.5');
+            toggleButton.classList.add('translate-x-0');
+        }
+    }
+    
+    // Initial state
+    updateToggleUI(toggleSwitch.checked);
+    
+    // Click handler
+    toggleSwitch.addEventListener('change', function() {
+        updateToggleUI(this.checked);
+    });
+    
+    // Also handle clicks on the container
+    toggleContainer.addEventListener('click', function(e) {
+        if (e.target !== toggleSwitch) {
+            toggleSwitch.checked = !toggleSwitch.checked;
+            updateToggleUI(toggleSwitch.checked);
+        }
+    });
+
+    // ==================== CONTACT FORM HANDLER ====================
+    const contactForm = document.getElementById('contact-form');
+    const submitButton = document.querySelector('#contact-form button[type="submit"]');
+    const originalButtonText = submitButton.innerHTML;
+    
+    // Status Nachrichten Container erstellen
+    function createStatusContainer() {
+        let statusDiv = document.getElementById('form-status');
+        if (!statusDiv) {
+            statusDiv = document.createElement('div');
+            statusDiv.id = 'form-status';
+            statusDiv.className = 'mt-4 p-4 rounded-lg hidden';
+            contactForm.appendChild(statusDiv);
+        }
+        return statusDiv;
+    }
+    
+    // Status anzeigen
+    function showStatus(message, type = 'success') {
+        const statusDiv = createStatusContainer();
+        statusDiv.className = `mt-4 p-4 rounded-lg ${type === 'success' ? 'bg-green-900/20 border border-green-500 text-green-400' : 'bg-red-900/20 border border-red-500 text-red-400'}`;
+        statusDiv.innerHTML = `
+            <div class="flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    ${type === 'success' 
+                        ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>' 
+                        : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>'
+                    }
+                </svg>
+                ${message}
+            </div>
+        `;
+        statusDiv.classList.remove('hidden');
+        
+        // Nach 5 Sekunden ausblenden
+        setTimeout(() => {
+            statusDiv.classList.add('hidden');
+        }, 5000);
+    }
+    
+    // Button Status aktualisieren
+    function updateButtonState(loading = false) {
+        if (loading) {
+            submitButton.disabled = true;
+            submitButton.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Wird gesendet...
+            `;
+        } else {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonText;
+        }
+    }
+    
+    // Form Validierung
+    function validateForm(formData) {
+        const errors = [];
+        
+        // Erforderliche Felder
+        const required = ['first-name', 'last-name', 'email', 'company', 'message'];
+        required.forEach(field => {
+            if (!formData.get(field) || formData.get(field).trim() === '') {
+                errors.push(`${field.replace('-', ' ')} ist erforderlich`);
+            }
+        });
+        
+        // E-Mail Validierung
+        const email = formData.get('email');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email && !emailRegex.test(email)) {
+            errors.push('E-Mail Adresse ist ungültig');
+        }
+        
+        // Datenschutz Checkbox
+        const privacy = formData.get('agree-to-policies');
+        if (!privacy) {
+            errors.push('Datenschutzerklärung muss akzeptiert werden');
+        }
+        
+        return errors;
+    }
+    
+    // Form Submit Handler
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(contactForm);
+        
+        // Client-seitige Validierung
+        const validationErrors = validateForm(formData);
+        if (validationErrors.length > 0) {
+            showStatus('Fehler: ' + validationErrors.join(', '), 'error');
+            return;
+        }
+        
+        updateButtonState(true);
+        
+        try {
+            // FormData zu JSON konvertieren
+            const jsonData = {};
+            for (let [key, value] of formData.entries()) {
+                jsonData[key] = value;
+            }
+            
+            // AJAX Request
+            const response = await fetch('/contact-handler.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(jsonData)
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                showStatus(result.message, 'success');
+                contactForm.reset(); // Form zurücksetzen
+                updateToggleUI(false); // Toggle zurücksetzen
+                
+                // Optional: Google Analytics Event
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submit', {
+                        'event_category': 'Contact',
+                        'event_label': 'Contact Form Submitted'
+                    });
+                }
+                
+            } else {
+                throw new Error(result.error || 'Ein Fehler ist aufgetreten');
+            }
+            
+        } catch (error) {
+            console.error('Contact form error:', error);
+            showStatus('Fehler beim Senden der Nachricht: ' + error.message, 'error');
+        } finally {
+            updateButtonState(false);
+        }
+    });
+    
+    // Honeypot Feld hinzufügen (versteckt, für Bot-Schutz)
+    const honeypot = document.createElement('input');
+    honeypot.type = 'text';
+    honeypot.name = 'website_url';
+    honeypot.style.display = 'none';
+    honeypot.tabIndex = -1;
+    honeypot.autocomplete = 'off';
+    contactForm.appendChild(honeypot);
+});
+
+// ==================== SMOOTH SCROLLING ====================
+document.addEventListener('DOMContentLoaded', function() {
+    const demoButtons = document.querySelectorAll('a[href="#contact"]');
+    
+    demoButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('contact').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
+});
+</script>
+</body>
+</html>
