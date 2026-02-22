@@ -93,6 +93,10 @@ body.nc-theme {
   line-height: 1.5;
 }
 
+body.nc-theme.mobile-menu-open {
+  overflow: hidden;
+}
+
 body.nc-theme::after {
   content: "";
   position: fixed;
@@ -335,6 +339,137 @@ body.nc-theme::after {
   color: var(--text-primary) !important;
 }
 
+.nc-theme.is-cinematic-scrolling header nav {
+  box-shadow: var(--shadow-sm), var(--shadow-glow);
+  border-color: rgba(255, 153, 102, 0.3);
+}
+
+.nc-theme .is-nav-press {
+  animation: nav-press 420ms var(--ease-standard);
+}
+
+.nc-theme .section-arrival {
+  animation: section-arrival 960ms var(--ease-standard);
+}
+
+.nc-theme #mobile-menu {
+  opacity: 0;
+  background: transparent;
+  transition: opacity 220ms var(--ease-standard), background 320ms var(--ease-standard);
+}
+
+.nc-theme #mobile-menu[open] {
+  opacity: 1;
+}
+
+.nc-theme #mobile-menu .mobile-menu-backdrop {
+  background: rgba(5, 7, 9, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition:
+    background 320ms var(--ease-standard),
+    backdrop-filter 320ms var(--ease-standard),
+    -webkit-backdrop-filter 320ms var(--ease-standard);
+}
+
+.nc-theme #mobile-menu .mobile-menu-panel {
+  border-left: 1px solid var(--border-default);
+  background:
+    linear-gradient(170deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
+    var(--surface-overlay) !important;
+  box-shadow: -22px 0 52px rgba(0, 0, 0, 0.42);
+  transform: translate3d(108%, 0, 0) scale(0.98);
+  transform-origin: right center;
+  opacity: 0.6;
+  filter: saturate(0.9);
+  transition:
+    transform 420ms cubic-bezier(0.2, 0.9, 0.22, 1),
+    opacity 340ms var(--ease-standard),
+    filter 340ms var(--ease-standard);
+}
+
+.nc-theme #mobile-menu[data-state="opening"] .mobile-menu-backdrop,
+.nc-theme #mobile-menu[data-state="open"] .mobile-menu-backdrop {
+  background: rgba(5, 7, 9, 0.68);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.nc-theme #mobile-menu[data-state="opening"] .mobile-menu-panel,
+.nc-theme #mobile-menu[data-state="open"] .mobile-menu-panel {
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
+  filter: saturate(1);
+}
+
+.nc-theme #mobile-menu[data-state="closing"] .mobile-menu-backdrop {
+  background: rgba(5, 7, 9, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+}
+
+.nc-theme #mobile-menu[data-state="closing"] .mobile-menu-panel {
+  transform: translate3d(112%, 0, 0) scale(0.975);
+  opacity: 0.2;
+}
+
+.nc-theme #mobile-menu .mobile-menu-link {
+  opacity: 0;
+  transform: translate3d(20px, 0, 0);
+  transition:
+    transform 420ms var(--ease-standard),
+    opacity 260ms var(--ease-standard),
+    background var(--duration-ui) var(--ease-standard),
+    color var(--duration-ui) var(--ease-standard);
+  transition-delay: var(--item-delay, 0ms);
+}
+
+.nc-theme #mobile-menu[data-state="opening"] .mobile-menu-link,
+.nc-theme #mobile-menu[data-state="open"] .mobile-menu-link {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.nc-theme #mobile-menu[data-state="closing"] .mobile-menu-link {
+  opacity: 0;
+  transform: translate3d(12px, 0, 0);
+}
+
+.nc-theme #mobile-menu .mobile-menu-link.is-selected {
+  color: var(--accent) !important;
+  background: var(--accent-dim) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 153, 102, 0.22);
+}
+
+@keyframes nav-press {
+  0% {
+    transform: translateY(0) scale(1);
+    text-shadow: 0 0 0 rgba(255, 153, 102, 0);
+  }
+  35% {
+    transform: translateY(1px) scale(0.985);
+    text-shadow: 0 0 18px rgba(255, 153, 102, 0.45);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    text-shadow: 0 0 0 rgba(255, 153, 102, 0);
+  }
+}
+
+@keyframes section-arrival {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 153, 102, 0);
+  }
+  40% {
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 153, 102, 0.34),
+      inset 0 0 72px rgba(255, 153, 102, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 153, 102, 0);
+  }
+}
+
 .blob-shape {
   clip-path: polygon(
     74.1% 44.1%,
@@ -421,6 +556,18 @@ body.nc-theme::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .nc-theme .is-nav-press,
+  .nc-theme .section-arrival {
+    animation: none;
+  }
+
+  .nc-theme #mobile-menu,
+  .nc-theme #mobile-menu .mobile-menu-backdrop,
+  .nc-theme #mobile-menu .mobile-menu-panel,
+  .nc-theme #mobile-menu .mobile-menu-link {
+    transition: none !important;
+  }
+
   .blob-shape {
     animation: none;
   }
